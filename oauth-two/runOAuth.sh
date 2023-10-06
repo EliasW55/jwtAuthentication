@@ -24,15 +24,30 @@ done
 echo "Registering user..."
 REGISTRATION_URL="http://localhost:8080/api/v1/auth/register"
 
-# Register and capture the token from the response
-echo "Requesting authorization token"
+REG_TOKEN=$(curl -s -X POST \
+                  -H "Content-Type: application/json" \
+                  -d '{
+                        "firstname": "Elias",
+                        "lastname": "Warres",
+                        "email":  "elias.warres@gmail.com",
+                        "password": "password",
+                        "role":  "ADMIN"
+                      }' \
+                  $REGISTRATION_URL | jq -r '.token' 2> /dev/null)
+
+echo "Registration code received: $REG_TOKEN"
+
+# Authenticate user
+echo "Authenticating user..."
+AUTHENTICATE_URL="http://localhost:8080/api/v1/auth/authenticate"
 AUTH_TOKEN=$(curl -s -X POST \
                   -H "Content-Type: application/json" \
                   -d '{
-                        "username": "ewarres",
-                        "password": "ewarres"
+                        "email":  "elias.warres@gmail.com",
+                        "password": "password"
                       }' \
-                  $REGISTRATION_URL | jq -r '.token' 2> /dev/null)
+                  $AUTHENTICATE_URL | jq -r '.token' 2> /dev/null)
+
 
 # Check if the token was successfully retrieved
 if [ -z "$AUTH_TOKEN" ]; then
@@ -47,15 +62,17 @@ echo "Accessing resource with authorization token..."
 DEMO_URL="http://localhost:8080/api/v1/demo-controller"
 
 RESPONSE=$(curl -s -X GET \
-                -H "Authorization: Bearer 0000" \
+                -H "Authorization: Bearer $AUTH_TOKEN" \
                 $DEMO_URL)
 echo $RESPONSE
-
-
 echo
 
-# Print a newline for better terminal readability
-echo "SUCCESS"
+# Check if we could access the resource
+if [[ $RESPONSE == *"Resource endpoint successfully reached."* ]]; then
+    echo "SUCCESS"
+else
+    echo "FAIL"
+fi
 
 echo
 
