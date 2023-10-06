@@ -1,0 +1,14 @@
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/user/User.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/auth/RegisterRequest.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/OauthTwoApplication.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/auth/AuthenticationRequest.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/config/JwtAuthenticationFilter.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/auth/AuthenticationService.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/user/Role.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/demo/DemoController.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/config/ApplicationConfig.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/auth/AuthenticationController.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/auth/AuthenticationResponse.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/user/UserRepository.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/config/JwtService.java
+/Users/ewarres/geniemd/oauth2/oauth-two/src/main/java/dev/geniemd/oauthtwo/config/SecurityConfiguration.java

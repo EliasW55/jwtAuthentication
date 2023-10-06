@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-sql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ewarres
+      POSTGRES_PASSWORD: ewarres
+      POSTGRES_DB: jwt_security
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    restart: unless-stopped
+
+volumes:
+  postgres:
